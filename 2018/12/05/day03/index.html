@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="ZH">
 <meta property="og:description" content="(3)非空约束——NOT NULL    声明了非空约束的列上不能插入NULL（4）默认值约束——DEFAULT 默认值    可以使用DEFAULT关键字来声明默认值，有两种方式应用默认值        INSERT  INTO  xz_laptop_family  VALUES(40,’苹果’，DEFAULT);        INSERT  INTO  xz_laptop_family(fi">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-12-05T12:14:41.081Z">
+<meta property="og:updated_time" content="2018-12-05T12:15:57.384Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="day03">
 <meta name="twitter:description" content="(3)非空约束——NOT NULL    声明了非空约束的列上不能插入NULL（4）默认值约束——DEFAULT 默认值    可以使用DEFAULT关键字来声明默认值，有两种方式应用默认值        INSERT  INTO  xz_laptop_family  VALUES(40,’苹果’，DEFAULT);        INSERT  INTO  xz_laptop_family(fi">
@@ -137,7 +137,7 @@
 <p>= &lt;= &gt; &lt; = !=<br>练习：查询出１９９１－１－１后出生僧的员工所有信息<br>SELECT <em> FROM emp WHERE sex=1;<br>练习：查询出不在１０号部门的员工所有信息<br>SELECT </em> FROM emp WHERE deptId!=10;<br>练习：查询出没有明确部门的员工所有信息<br>    SELECT <em> FROM emp WHERE deptId IS NULL;<br>练习; 查询出有明确部门的员工所有信息<br>SELECT </em> FROM emp WHERE deptId IS NOT NULL;<br>练习： 查询出工资大于6000的女员工的所有信息<br>    SELECT <em> FROM emp WHERE sex=0 AND salary&gt;6000;<br>练习：查询出工资在5000~7000之间的员工所有信息<br>    SELECT </em> FROM emp WHERE salary&gt;=5000 AND salary&lt;=7000;<br>    SELECT <em> FROM emp WHERE salary BETWEEN 5000 AND 7000;<br>练习：查询出工资在5000以下，7000以上的员工所有信息<br>    SELECT </em>FROM emp WHERE salary<5000 or="" salary="">7000;<br>SELECT <em> FROM emp WHERE salary NOT BETWEEN 5000 AND 7000;<br>练习：查询出1990之前出生的员工和1993年右后出生的员工所有信息<br> SELECT </em> FROM emp WHERE birthday NOT BETWEEN ‘1991-01-01’ AND ‘1993-12-31’;<br>    练习：查询出1993年出生的员工所有信息<br>SELECT <em> FROM emp WHERE birthday BETWEEN ‘    1993-1-1’AND ‘1993-12-31’;<br>    练习：查询出10号和30号部门员工所有信息<br>    SELECT </em> FROM emp WHERE deptId=10 OR deptId=30;<br>    SELECT <em> FROM emp WHERE deptId IN(10,30);<br>    练习：查询出不在10和30好部门的员工所有信息<br>    SELECT </em> FROM emp WHERE deptId NOT IN(10,30);<br>IS NULL/IS NOT NULL<br>AND/OR<br>BETWEEN….AND…/NOT BETWEEN…AND….<br>IN()/NOT IN<br>注意：删除、更改、查询都可以结合条件查询<br>（8）模糊条件查询<br>    示例：查询出员工姓名中含有字母e的员工<br>    SELECT <em> FROM emp WHERE ename LIKE ‘%e%’;<br>    练习：查询出姓名中以e结尾的员工所有信息<br>    SELECT </em> FROM  emp WHERE ename LIKE ‘%e’;<br>    练习：查询出姓名中倒数第二个为e的员工所有信息<br>    SELECT * FROM emp WHERE ename LIKE ‘%e_’;<br>SQL中提供了两个模糊查询的字符<br>% 可以匹配任意多个字符  &gt;=0<br>_ 可以匹配任意一个字符   =0<br>注意：以上两个匹配不能和=使用，必须使用LIKE关键字</5000></p>
 </blockquote>
 <p>(9)分页查询<br>    加入查询的记过集中有太多的数据，一次显示不玩，可以分页显示。<br>    需要有两个条件： 当前的页码、每页的数据量<br>    SELECT * FROM emp LIMIT start,count;<br>    Start :是一个数字，从结果集中的那1条开始读取，第一条称为0<br>    count：是一个数字，最多读取的行数</p>
-<p>梅也开始的算法<br>start=(页码-1)*count</p>
+<p>每页开始的算法<br>start=(页码-1)*count</p>
 <p>假设每一页显示5条记录<br>第一页：SELECT <em> FROM emp LIMIT 0,5;<br>第二页：SELECT </em> FROM emp LIMIT 5,5;<br>第3页:SELECT <em> FROM emp LIMIT 10,5;<br>第4页：SELECT </em> FROM emp LIMIT 15,5;<br>假设每页显示6条记录<br> 第1页：SELECT <em> FROM emp LIMIT 0,6;<br>第2页：SELECT </em> FROM empLIMIT 6,6;</p>
 
       
